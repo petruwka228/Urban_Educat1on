@@ -7,11 +7,11 @@ for i in range(len(numbers)):
         continue
     for j in range(2, numbers[i]):
         if numbers[i]%j == 0:
-            primes.append(numbers[i])
+            not_primes.append(numbers[i])
             is_number = True
             break
-    if is_number == False:
-        not_primes.append(numbers[i])
+    if not is_number:
+        primes.append(numbers[i])
     is_number = False
 print(primes)
 print(not_primes)
