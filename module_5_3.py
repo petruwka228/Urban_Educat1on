@@ -7,7 +7,7 @@ class House:
     def __str__(self):
         return f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
     def __eq__(self, other):
-        if isinstance(other, int) and isinstance(other, House):
+        if isinstance(other, House):
             return self.number_of_floors == other.number_of_floors
     def  __lt__(self, other):
         if isinstance(other, int) and isinstance(other, House):
