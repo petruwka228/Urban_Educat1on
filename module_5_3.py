@@ -18,22 +18,32 @@ class House:
     def  __lt__(self, other):
         if isinstance(other, House):
             return self.number_of_floors < other.number_of_floors
+        else:
+            return False
 
     def __le__(self, other):
         if isinstance(other, House):
             return self.number_of_floors <= other.number_of_floors
+        else:
+            return False
 
     def __gt__(self, other):
         if isinstance(other, House):
             return self.number_of_floors > other.number_of_floors
+        else:
+            return False
 
     def __ge__(self, other):
         if isinstance(other, House):
             return self.number_of_floors >= other.number_of_floors
+        else:
+            return False
 
     def __ne__(self, other):
         if isinstance(other, House):
             return self.number_of_floors != other.number_of_floors
+        else:
+            return False
 
     def __add__(self, value):
         self.number_of_floors = self.number_of_floors + value
@@ -46,7 +56,7 @@ class House:
     def __iadd__(self, value):
         self.number_of_floors += value
         return self.number_of_floors
-    
+
 h1 = House('ЖК Эльбрус', 10)
 h2 = House('ЖК Акация', 20)
 print(h1)
