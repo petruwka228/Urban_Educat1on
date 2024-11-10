@@ -6,6 +6,9 @@ class User:
         self.password = hash(password)
         self.age = age
 
+    def __repr__(self):
+        return self.nickname
+
 class Video:
     def __init__(self, title, duration, time_now=0, adult_mode=False):
         self.title = title
