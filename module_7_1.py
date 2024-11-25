@@ -22,11 +22,16 @@ class Shop:
     def add(self, *products):
         current_products = self.get_products().splitlines()
         current_names = [i.split(", ")[0] for i in current_products]
+        current_weight = [i.split(", ")[1] for i in current_products]
+        current_category = [i.split(", ")[2] for i in current_products]
         file = open(self.__file_name, 'a')
         for product in products:
-            if product.name not in current_names:
+            if product.name not in current_names and product.weight not in current_weight and \
+                    product.category not in current_category:
                 file.write(str(product) + '\n')
                 current_names.append(product.name)
+                current_weight.append(product.weight)
+                current_category.append(product.category)
             else:
                 print(f'Продукт {product.name} уже есть в магазине')
         file.close()
