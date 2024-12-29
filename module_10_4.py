@@ -20,8 +20,8 @@ if __name__ == '__main__':
     print(t2 - t1, '(линейный)')
     with Pool() as pool:
 
-    t1 = time.time()
+        t1 = time.time()
         pool.map(read_info, filenames)
-    t2 = time.time()
+        t2 = time.time()
 
     print(t2 - t1, '(многопроцессный)')
