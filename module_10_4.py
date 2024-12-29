@@ -18,9 +18,9 @@ if __name__ == '__main__':
         read_info(i)
     t2 = time.time()
     print(t2 - t1, '(линейный)')
+    with Pool() as pool:
 
     t1 = time.time()
-    with Pool() as pool:
         pool.map(read_info, filenames)
     t2 = time.time()
 
